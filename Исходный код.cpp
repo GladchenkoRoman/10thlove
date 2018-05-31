@@ -149,69 +149,6 @@ void Choose(int f) {   //Функция выбранного меню
 
 int main(){
 setlocale(LC_ALL, "Rus");
-//Student ST("Vasya","IS-999",1);
-//Dekanat Betta("Elena");
-//Prepod Gamma;
-
-
-/*int a=1;
-
-while (a!=0){
-system("cls");
-ShowMain();
-cout<<"Введите значение , чтобы понять кто вы: ";
-cin>>a;
-
-if (a<0 || a>3) {
-cout<<"Error"<<endl;
-system("pause");
-system("cls");
-continue;
-}
-
-Alpha.Uz.Avtoriz(a);
-
-system("cls");
-
-switch (a){
-
-case 1:
-	ShowMenu2();
-	cout<<"Введите значения для выбора меню: ";
-	cin>>a;
-	if (a==1){Alpha.opl.AddOplata();}
-	if (a==2){Alpha.AddRabota();}
-	if (a==3){Alpha.TakeBook(&Delta);}
-	if (a==4){Alpha.GiveBook(&Delta);}
-break;
-
-case 2:
-	ShowMenu3();
-	cout<<"Введите значение для выбора меню: ";
-	cin>>a;
-	if (a==1){Gamma.Proverka(&Alpha);}
-break;
-
-case 3:
-	ShowMenu1();
-	cout<<"Введите значения для выбора меню: ";
-	cin>>a;
-	if (a==1){Betta.AddStud();}
-	if (a==2){Betta.ShowOplata();}
-	if (a==3){Betta.CorrectStud();}
-break;
-
-
-
-}
-}
-
-system("pause");
-return 0;
-
-*/
-
-
 
 
 // Вот тут щас будут такие новвоведения , что пуля не дура - дурак человек
