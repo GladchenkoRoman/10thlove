@@ -68,20 +68,20 @@ cout<<"3 - Личный кабинет деканата"<<endl;
 cout<<"0 - Выйти из программного продукта"<<endl<<endl;
 }
 
-void ShowMenu1(){ //Деканат
+void ShowMenu1(){ 
 cout<<"1 - Добавить студента"<<endl;
-cout<<"2 - Проверить оплату"<<endl; // нахуй не сдалось
+cout<<"2 - Проверить оплату"<<endl; 
 cout<<"3 - Редактировать студента"<<endl<<endl;
 cout << "4 - Изменения расписания" << endl;
 cout << " 5- Просмотр расписания" << endl;
 cout << "6 - Удаление студента" << endl;
 }
 
-void ShowMenu2(){ //Студент
-cout<<"1 - Оплата общаги"<<endl; // нахуй не сдалось
-cout<<"2 - Добавить работу"<<endl;// нахуй не сдалось
-cout<<"3 - Получить книгу"<<endl;// нахуй не сдалось
-cout << "4 - Отдать книгу" << endl;// нахуй не сдалось
+void ShowMenu2(){ 
+cout<<"1 - Оплата общаги"<<endl; 
+cout<<"2 - Добавить работу"<<endl;
+cout<<"3 - Получить книгу"<<endl;
+cout << "4 - Отдать книгу" << endl;
 cout << "5 - Просмотр расписания" << endl;
 cout << "6 - Просмотр оценок" << endl;
 cout << " 7 -Просмотр задолжностей" << endl << endl;
@@ -100,7 +100,7 @@ void Choose(int f) {   //Функция выбранного меню
 					   //Переменные для ввода данных
 	Student ST("Roman Gladchenko", "IS/B-23-O", 1); // Alpha
 	Dekanat DE("Saevich");		//Betta
-	Prepod PR;		//Gamma
+	TovarishPrepodavatel PR;		//Gamma
 	
 	int a=1;
 	long double per1, per2, per3, per4, per5, per6, per7, per8, per9, per10;
@@ -150,7 +150,6 @@ void Choose(int f) {   //Функция выбранного меню
 int main(){
 setlocale(LC_ALL, "Rus");
 
-МИША ЩА БУДЕТ СЛИЯНИЕ , ЧТО ТЫ ОХУЕЕШЬ
 // Вот тут щас будут такие новвоведения , что пуля не дура - дурак человек
 
 
