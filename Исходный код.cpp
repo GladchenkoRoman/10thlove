@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string.h>
 
-// Раз два три по почкам раз два три по печени
+
 #include <sstream>
 #include <conio.h>
 #include <fstream> 
@@ -49,6 +49,22 @@ const char *word1[] = {			//	Декан
 
 };
 
+const char *word2[] = {			//	Студент
+	"		 Просмотр расписания					",
+	"		 Просмотр оценок					",
+	"		 Просмотр задолжностей					",
+	"		 Выход							",
+};
+
+const char *word3[] = {			//	Товарищ Преподаватель
+	"		 Выставление оценок					",
+	"		 Внесение отметки о задолжности студента					",
+	"		 Внесение отметки о снятии задолжности					",
+	"		 Выход							",
+
+
+};
+
 
 void ShowwMenu1(int f) {			// Менюха для декана
 	SetColor(0, 15); // 0 , 0 
@@ -66,6 +82,44 @@ void ShowwMenu1(int f) {			// Менюха для декана
 	}
 	SetColor(0, 15); // 15 0 
 }
+
+
+void ShowwMenu2(int f) {			// Менюха для студента
+	SetColor(0, 15); // 0 , 0 
+	for (int i = 0; i < 4; i++) {
+		SetColor(0, 15);
+		GotoXY(10, i + 5);
+		if (f == i) { // Эх Шарик я как и ты был на цепи
+			SetColor(13, 15);
+			cout << "->";
+		}
+		else {
+			SetColor(0, 15);
+		}  // 3 255
+		cout << "  " << word2[i] << "";
+	}
+	SetColor(0, 15); // 15 0 
+}
+
+void ShowwMenu3(int f) {			// Менюха для товарища преподавателя
+	SetColor(0, 15); // 0 , 0 
+	for (int i = 0; i < 4; i++) {
+		SetColor(0, 15);
+		GotoXY(10, i + 5);
+		if (f == i) { // Эх Шарик я как и ты был на цепи
+			SetColor(13, 15);
+			cout << "->";
+		}
+		else {
+			SetColor(0, 15);
+		}  // 3 255
+		cout << "  " << word3[i] << "";
+	}
+	SetColor(0, 15); // 15 0 
+}
+
+
+
 
 
 
@@ -97,33 +151,16 @@ cout<<"3 - Личный кабинет студента"<<endl;
 cout<<"0 - Выйти из программного продукта"<<endl<<endl;
 }
 
+
+
 /*
-void ShowMenu1(){		//декан 
-cout<<"1 - Добавить студента"<<endl;
-cout<<"2 - Проверить оплату"<<endl; // убрать
-cout<<"3 - Редактировать студента"<<endl<<endl;//убрать
-cout << "4 - Изменения расписания" << endl;
-cout << " 5- Просмотр расписания" << endl;
-cout << "6 - Удаление студента" << endl;
-}*/
-
-void ShowMenu2(){ //студент
-cout<<"1 - Оплата общаги"<<endl; //убрать
-cout<<"2 - Добавить работу"<<endl;//убрать
-cout<<"3 - Получить книгу"<<endl;//убрать
-cout << "4 - Отдать книгу" << endl;//убрать
-cout << "5 - Просмотр расписания" << endl;
-cout << "6 - Просмотр оценок" << endl;
-cout << " 7 -Просмотр задолжностей" << endl << endl;
-}
-
 void ShowMenu3(){ // Товарищ преподаватель
 cout<<"1 - Проверить работу"<<endl; // полу нахуй не сдалось
 cout << "2 - Выставление оценок" << endl;
 cout << "3 -Внесение отметки о задолжности студента" << endl;
 cout << "4 -Внесение отметки о сняти задолжности студента" << endl;
 }
-
+*/
 
 
 void Choose(int f) {   //Функция выбранного меню
@@ -141,7 +178,6 @@ void Choose(int f) {   //Функция выбранного меню
 	switch (f) {
 		//per1=0;	
 	case 0:
-		//ShowwMenu1();
 
 	{//Декан
 		system("cls");
@@ -167,7 +203,7 @@ void Choose(int f) {   //Функция выбранного меню
 
 			if (code == 13) {  //Enter
 				//system("cls");
-				if (ff == 0) { 
+				if (ff == 0) {
 					DE.AddStud(); break;
 				}
 				if (ff == 1) { DE.ShowOplata(); break; }
@@ -180,31 +216,92 @@ void Choose(int f) {   //Функция выбранного меню
 		}
 
 		while (1);
+
+		break;
+	}
+
+
+	case 1: {
 	
+		system("cls");
+		int a, f, ff, code;
+		f = 0;
+		ff = 0;
+		a = 0;
+		ShowwMenu2(ff);
+		do {
+
+			code = getch();
+			if (code == 80) {  //Âíèç
+				if (ff == 3) { ff = 0; } //9
+				else { ff = ff + 1; }
+				ShowwMenu2(ff);
+			}
+
+			if (code == 72) {  //Ââåðõ
+				if (ff == 0) { ff = 3; }//9
+				else { ff = ff - 1; }
+				ShowwMenu2(ff);
+			}
+
+			if (code == 13) {  //Enter
+							   //system("cls");
+				if (ff == 0) { ST.AddRabota(); break; }
+				if (ff == 1) { break; }
+				if (ff == 2) { break; }
+				if (ff == 3) { break;}
+			}
+			//break;
+
+		}
+
+		while (1);
+
+		
+			break;
+	}
+	case 2:			// Товарищ преподаватель.
+	{
+		system("cls");
+		int a, f, ff, code;
+		f = 0;
+		ff = 0;
+		a = 0;
+		ShowwMenu3(ff);
+		do {
+
+			code = getch();
+			if (code == 80) {  //Âíèç
+				if (ff == 3) { ff = 0; } //9
+				else { ff = ff + 1; }
+				ShowwMenu3(ff);
+			}
+
+			if (code == 72) {  //Ââåðõ
+				if (ff == 0) { ff = 3; }//9
+				else { ff = ff - 1; }
+				ShowwMenu3(ff);
+			}
+
+			if (code == 13) {  //Enter
+							   //system("cls");
+				if (ff == 0) { break; }
+				if (ff == 1) { PR.Proverka(&ST); break; }
+				if (ff == 2) { break; }
+				if (ff == 3) { break; }
+				}
+			}
+				//break;
+
+			
+
+			while (1);
+
 			break;
 		}
-	/*	cout << "Введите значения для выбора меню: ";
-		cin >> a;
-		if (a == 1) { DE.AddStud(); }
-		if (a == 2) { DE.ShowOplata(); }
-		if (a == 3) { DE.CorrectStud(); }
-		break;*/
 
-	case 1:
-		ShowMenu2();
-		cin >> a;
-	
-		if (a == 2) { ST.AddRabota(); }
-		
-		break;
 
-	case 2:
-		ShowMenu3();
-		cout << "Введите значение для выбора меню: ";
-		cin >> a;
-		if (a == 1) { PR.Proverka(&ST); }
-		
-		break;
+	//	break;
 	case 3:
 		exit(0);
 		break;
@@ -230,7 +327,7 @@ int y = 2;
 int f = 0, ff = 0;;
 SetColor(0, 15);
 system("cls");
-//SetColor(0,15); 														//Ãëàâíàÿ ïðîãðàììà. 
+//SetColor(0,15); 														
 SetConsoleOutputCP(1251);
 SetConsoleCP(1251);
 int code;
