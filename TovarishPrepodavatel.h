@@ -1,7 +1,7 @@
 #pragma once
 #include "Student.h"
 
-class Prepod{
+class TovarishPrepodavatel {
 
 public:
 

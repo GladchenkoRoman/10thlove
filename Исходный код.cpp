@@ -40,7 +40,7 @@ const char *word[] = {			//	Первая менюха
 };
 
 
-const char *word1[] = {			//	Первая менюха
+const char *word1[] = {			//	Декан
 	"		 Добавить студента					",
 	"		 Изменения расписания					",
 	"		 Просмотр расписания					",
@@ -48,6 +48,24 @@ const char *word1[] = {			//	Первая менюха
 	"		 Выход							",
 
 };
+
+
+void ShowwMenu1(int f) {			// Менюха для декана
+	SetColor(0, 15); // 0 , 0 
+	for (int i = 0; i < 5; i++) {
+		SetColor(0, 15);
+		GotoXY(10, i + 5);
+		if (f == i) { // Эх Шарик я как и ты был на цепи
+			SetColor(13, 15);
+			cout << "->";
+		}
+		else {
+			SetColor(0, 15);
+		}  // 3 255
+		cout << "  " << word1[i] << "";
+	}
+	SetColor(0, 15); // 15 0 
+}
 
 
 
@@ -69,9 +87,9 @@ void ShowMenu(int f) {
 }
 
 void ShowMain(){
-cout<<"1 - Личный кабинет студента"<<endl;
+cout<<"1 - Личный кабинет деканата"<<endl;
 cout<<"2 - Личный кабинет товарища преподавателя"<<endl;
-cout<<"3 - Личный кабинет деканата"<<endl;
+cout<<"3 - Личный кабинет студента"<<endl;
 
 
 
@@ -79,6 +97,7 @@ cout<<"3 - Личный кабинет деканата"<<endl;
 cout<<"0 - Выйти из программного продукта"<<endl<<endl;
 }
 
+/*
 void ShowMenu1(){		//декан 
 cout<<"1 - Добавить студента"<<endl;
 cout<<"2 - Проверить оплату"<<endl; // убрать
@@ -86,7 +105,7 @@ cout<<"3 - Редактировать студента"<<endl<<endl;//убрат
 cout << "4 - Изменения расписания" << endl;
 cout << " 5- Просмотр расписания" << endl;
 cout << "6 - Удаление студента" << endl;
-}
+}*/
 
 void ShowMenu2(){ //студент
 cout<<"1 - Оплата общаги"<<endl; //убрать
@@ -122,13 +141,54 @@ void Choose(int f) {   //Функция выбранного меню
 	switch (f) {
 		//per1=0;	
 	case 0:
-		ShowMenu1();
-		cout << "Введите значения для выбора меню: ";
+		//ShowwMenu1();
+
+	{//Декан
+		system("cls");
+		int a, f, ff, code;
+		f = 0;
+		ff = 0;
+		a = 0;
+		ShowwMenu1(ff);
+		do {
+
+			code = getch();
+			if (code == 80) {  //Âíèç
+				if (ff == 4) { ff = 0; } //9
+				else { ff = ff + 1; }
+				ShowwMenu1(ff);
+			}
+
+			if (code == 72) {  //Ââåðõ
+				if (ff == 0) { ff = 4; }//9
+				else { ff = ff - 1; }
+				ShowwMenu1(ff);
+			}
+
+			if (code == 13) {  //Enter
+				//system("cls");
+				if (ff == 0) { 
+					DE.AddStud(); break;
+				}
+				if (ff == 1) { DE.ShowOplata(); break; }
+				if (ff == 2) { DE.CorrectStud(); break; }
+				if (ff == 3) { break; }
+				if (ff == 4) { break; }
+			}
+			//break;
+
+		}
+
+		while (1);
+	
+			break;
+		}
+	/*	cout << "Введите значения для выбора меню: ";
 		cin >> a;
 		if (a == 1) { DE.AddStud(); }
 		if (a == 2) { DE.ShowOplata(); }
 		if (a == 3) { DE.CorrectStud(); }
-		break;
+		break;*/
 
 	case 1:
 		ShowMenu2();

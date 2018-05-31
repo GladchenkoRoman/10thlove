@@ -1,6 +1,6 @@
 #include "TovarishPrepodavatel.h"
 
 
-void Prepod::Proverka(Student *A){
+void TovarishPrepodavatel::Proverka(Student *A){
 	A->Prepod_Proverka();
 }
