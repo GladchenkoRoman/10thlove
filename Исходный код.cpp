@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <Windows.h>
 
-
+// Миша привет
 using namespace std;
 
 
